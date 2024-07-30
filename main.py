@@ -19,17 +19,14 @@ def cosine_similarity(vec1, vec2):
   return cos_sim
 
 def name_similarity(name1, name2):
-        
-        embedding1 = get_word_embedding(name1)
-        embedding2 = get_word_embedding(name2)
-        if np.linalg.norm(embedding1) != 0 and np.linalg.norm(embedding2) != 0:
-            similarity = cosine_similarity(embedding1, embedding2)
-            
-        else:
-            print("invalid embeddings")
-            return 0
-    
-        return similarity
+    embedding1 = get_word_embedding(name1)
+    embedding2 = get_word_embedding(name2)
+    if np.linalg.norm(embedding1) != 0 and np.linalg.norm(embedding2) != 0:
+        similarity = cosine_similarity(embedding1, embedding2)  
+    else:
+        print("invalid embeddings")
+        return 0
+    return similarity
 
 def set_similarity(list1, list2):
 
